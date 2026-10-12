@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\HomeController;
+
 use App\Http\Controllers\MahasiswaController;
 
 use App\Http\Controllers\MatakuliahController;
@@ -36,6 +38,5 @@ Route::get('about', function () {
     return view('halaman-about');
 });
 
-Route::get('/matakuliah/show/{kode?}', [MatakuliahController::class, 'show']);
+Route::get('/home', [HomeController::class, 'index']);
 
-Route::resource('matakuliah', MatakuliahController::class)->except(['show']);
